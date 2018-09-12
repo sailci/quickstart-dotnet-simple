@@ -1,0 +1,20 @@
+tasks:
+    restore:
+        image: microsoft/dotnet:2.1-sdk-alpine
+        env:
+            - DOTNET_CLI_TELEMETRY_OPTOUT: true
+            - DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+        command:
+            - dotnet
+        args:
+            - restore
+    test:
+        image: microsoft/dotnet:2.1-sdk-alpine
+        env:
+            - DOTNET_CLI_TELEMETRY_OPTOUT: true
+            - DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+        command:
+            - dotnet
+        args:
+            - test
+            - QuickStart.Tests
